@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/PinkDragon94/ESA-EXC/issues"
   },
-  "homepage": "https://github.com/PinkDragon94/ESA-EXC#readme"
+  "homepage": "https://github.com/PinkDragon94/ESA-EXC#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
