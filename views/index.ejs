@@ -9,10 +9,12 @@
 <body>
     <h1>Submit Data to API</h1>
     <form action="/api/data" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="firstName">First Name:</label>
+        <input name="firstName" id="firstName" type="text" autocomplete="given-name" required/>
+        <label for="lastName">Last Name:</label>
+         <input name="lastName" id="lastName" type="text" autocomplete="family-name" required/>
+         <label for="email">Email:</label>
+         <input name="email" id="email" type="email" autocomplete="off" required />
         <button type="submit">Submit</button>
     </form>
 </body>
