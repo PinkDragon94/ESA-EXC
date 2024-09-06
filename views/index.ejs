@@ -7,16 +7,50 @@
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Submit Data to API</h1>
-    <form action="/api/data" method="POST">
+    <h1>Welcome to the App</h1>
+<p>Create and manage Users, Posts, and Comments.</p>
+<h1>Welcome to My Express App</h1>
+    <p>This is the home page. You can view the <a href="/users">users list</a>.</p>
+<a href="/users">View Users</a> | <a href="/posts">View Posts</a> | <a href="/comments">View Comments</a>
+
+    <!-- <form action="/api/data" method="POST"> -->
+        <h2>Create a New User</h2>
+        <form action="/users" method="POST">
         <label for="firstName">First Name:</label>
         <input name="firstName" id="firstName" type="text" autocomplete="given-name" required/>
         <label for="lastName">Last Name:</label>
          <input name="lastName" id="lastName" type="text" autocomplete="family-name" required/>
          <label for="email">Email:</label>
          <input name="email" id="email" type="email" autocomplete="off" required />
-        <button type="submit">Submit</button>
+        <button type="submit">Create User</button>
     </form>
+    <h2>All Users</h2>
+<ul>
+    <!-- <% users.forEach(function(user) { %>
+        <li><%= user.name %> (<%= user.email %>)</li>
+    <% }); %> -->
+</ul>
+    <h2>Create a New Post</h2>
+<form action="/posts" method="POST">
+    <label for="userId">User ID:</label>
+    <input type="number" id="userId" name="userId" required>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" required></textarea>
+    <button type="submit">Create Post</button>
+</form>
+
+<h2>Create a New Comment</h2>
+<form action="/comments" method="POST">
+    <label for="postId">Post ID:</label>
+    <input type="number" id="postId" name="postId" required>
+    <label for="userId">User ID:</label>
+    <input type="number" id="userId" name="userId" required>
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" required></textarea>
+    <button type="submit">Create Comment</button>
+</form>
 </body>
 <script>
     const form = document.querySelector('form');

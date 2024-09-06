@@ -1,11 +1,20 @@
 const express = require ("express");
 const bodyParser = require('body-parser');
+const userRoutes = require('./routes/users');
+const postRoutes = require('./routes/posts');
+const commentRoutes = require('./routes/comments');
+
+
 const app = express();
 const port = 3000;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())
 app.set('view engine', 'ejs');
+
+app.use('/users', userRoutes);
+app.use('/posts', postRoutes);
+app.use('/comments', commentRoutes);
 
 app.use((req, res, next) => {
     console.log(`${req.method} request for '${req.url}'`);
@@ -70,3 +79,18 @@ app.post('/api/data', validateData, (req, res) => {
     
     res.redirect('/');
 });
+let users = [
+    { id: 1, name: 'Alice', email: 'alice@example.com' },
+    { id: 2, name: 'Kim', email: 'Kim@example.com' }
+];
+
+let posts = [
+    { id: 1, userId: 1, title: 'First Post', content: 'The World is mines!' },
+    { id: 2, userId: 2, title: 'Hello World', content: 'Excited to join this platform.' }
+];
+
+let comments = [
+    { id: 1, postId: 1, userId: 2, content: 'Nice post, Alice!' },
+    { id: 2, postId: 2, userId: 1, content: 'Welcome, Kim!' }
+];
+
