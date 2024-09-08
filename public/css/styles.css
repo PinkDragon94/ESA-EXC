@@ -1,10 +1,84 @@
+body, h1, h2, p, ul, li {
+  background-color: rgb(235, 25, 95);
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  // Add additional styles here
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media a {
+  margin: 0 5px;
+}
+
+.social-media img {
+  width: 24px;
+  height: 24px;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input, form select, form textarea {
+  margin-top: 5px;
+  padding: 10px;
+}
+
+form button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
   
