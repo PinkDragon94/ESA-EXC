@@ -2,16 +2,8 @@
   "name": "esa-exc",
   "version": "1.0.0",
   "description": "Express App",
-  "main": "app.js",
-  "scripts": {
-    "start": "nodemon app.js",
-    "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PinkDragon94/ESA-EXC.git"
-  },
+  "main": "server.js",
+ 
   "author": "PinkDragon94",
   "license": "ISC",
   "bugs": {

@@ -7,8 +7,8 @@ const errorHandler = require('./middleware/error-handler');
 
 const app = express();
 
-app.use(express.static('/public'));
-server.get('/public', express.static('/public'));
+app.use(express.static('public'));
+
 
 // Set view engine
 app.set('view engine', 'ejs');
