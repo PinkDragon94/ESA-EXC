@@ -7,8 +7,8 @@ const errorHandler = require('./middleware/error-handler');
 
 const app = express();
 
-// Set static folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('/public'));
+server.get('/public', express.static('/public'));
 
 // Set view engine
 app.set('view engine', 'ejs');
@@ -27,8 +27,8 @@ const sneakers = [
 ];
 
 const users = [
-    { id: 1, name: 'John Doe', email: 'john@example.com' },
-    { id: 2, name: 'Jane Doe', email: 'jane@example.com' }
+    { id: 1, name: 'Micheal Jordan', email: 'Micheal@example.com' },
+    { id: 2, name: 'Magic Johnson', email: 'Magic@example.com' }
 ];
 
 app.put('/users/:id', (req, res) => {
@@ -51,8 +51,8 @@ app.put('/users/:id', (req, res) => {
 
 
 const comments = [
-    { id: 1, user: 'John Doe', text: 'Great product!' },
-    { id: 2, user: 'Jane Doe', text: 'Amazing quality!' }
+    { id: 1, user: 'Magic', text: 'Great product!' },
+    { id: 2, user: 'Jordan', text: 'Amazing quality!' }
 ];
 
 // Routes
@@ -76,24 +76,23 @@ app.get('/vote', (req, res) => {
 });
 
 app.post('/submit', (req, res) => {
-    // Access the data sent in the request body
+   
     const { name, email } = req.body;
     
-    // You can now use this data (e.g., save it to a database, etc.)
     console.log(`Name: ${name}, Email: ${email}`);
 
-    // Send a response back to the client
+    
     res.send(`Received the data: Name - ${name}, Email - ${email}`);
 });
 
 app.delete('/users/:id', (req, res) => {
     const userId = parseInt(req.params.id);
 
-    // Find the index of the user with the given ID
+    
     const userIndex = users.findIndex(u => u.id === userId);
 
     if (userIndex !== -1) {
-        // Remove the user from the array
+        
         users.splice(userIndex, 1);
 
         res.send(`User with ID ${userId} has been deleted.`);
@@ -102,7 +101,7 @@ app.delete('/users/:id', (req, res) => {
     }
 });
 
-// Error Handling
+
 app.use(errorHandler);
 
 // Start server
